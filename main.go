@@ -51,6 +51,9 @@ func depify(url, path string) error {
 		if len(diff) < nearestSize {
 			nearest = sha
 			nearestSize = len(diff)
+			if len(diff) == 0 {
+				break
+			}
 		}
 	}
 	if nearestSize > 0 {
